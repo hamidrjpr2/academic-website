@@ -1,0 +1,467 @@
+$bgcolor : #F4F5F7;
+$bgcolor2 : #D0D4DC;
+$favcolor : #ECEEEF;
+$favcolor2 : #003049;
+$themecolor : #3595f6;
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir-Medium.ttf');
+}
+
+@font-face {
+    font-family: Yekan;
+    src: url('../fonts/BYekan.ttf');
+}
+
+* {
+    margin: 0;padding: 0;box-sizing: border-box; font-family: Yekan;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+body {
+    background-color: $bgcolor;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+main {
+    margin: 0 auto;
+    // start of the structure
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+
+    >div {
+        // headers container
+        justify-content: center;
+        
+        header {
+            // header
+            display: flex;
+            margin-top: 100px;
+            height: 130px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 0 30px;
+            width: 100%;
+
+            >div {
+                // icons container
+                display: flex;
+                width: 25%;
+                height: 100%;
+                align-items: center;
+                >figure {
+                    // icons
+                    display: flex;
+                    width: 40px; height: 40px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: 0 5px;
+                    cursor: pointer;
+                    background-color: $favcolor;
+                    justify-content: center; align-items: center;
+                    transition: .4s;
+    
+                    >img {
+                        width: 70%;
+                        height: 70%;
+                    }
+                    &:nth-of-type(1)>img {
+                        // header's first icon
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &:hover {
+                        //hovering header left icons
+                        box-shadow: 0 0 10px $favcolor2;
+                    }
+                }
+                
+            }
+            >form {
+                // searchBar container
+                display: flex;
+                width: 50%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                direction: rtl;
+                
+                >input {
+                    // searchbar input
+                    border-radius: 10px;
+                    height: 50px;
+                    width: 100%;
+                    border: none;
+                    background-color: $favcolor;
+                    padding: 5px 10px;
+                    outline: none;
+                }
+            }
+            >figure {
+                // logo container
+                display: flex;
+                width: 25%;
+                align-items: center; justify-content: flex-end;
+    
+                >img {
+                    // logo image
+                    width: 80%;
+                }
+            }
+        }
+
+        // header finsh
+
+        >nav {
+            // navbar
+            direction: rtl;
+            display: flex;
+            width: 95%;
+            height: 60px;
+            background-color: $bgcolor2;
+            border-radius: 0 0 20px 20px;
+            justify-content: center;
+            align-items: center;
+            // padding: 0 20px;
+
+            >ul {
+                // list container
+                height: 100%;
+                >li {
+                    // list "li"s
+                    display: flex;
+                    flex-grow: 1;
+                    font-size: 16px;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    transition: .4s;
+
+                    &:hover>.subMenu {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    //sublist ul
+                    >.subMenu {
+                        opacity: 0;
+                        visibility: hidden;
+                        right: 10px;
+                        top: 60px;
+                        position: absolute;
+                        width: 180%;
+                        background-color: white;
+                        border-radius: 5px;
+                        padding: 20px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        z-index: 2;
+                        >a {
+                            display: block;
+                            width: 50%;
+                            padding: 10px;
+                            cursor: pointer;
+                            border-radius: 2px;
+                            transition: .3s;
+
+                            >p {
+                                opacity: .6;
+                            }
+
+                            &:hover {
+                                background-color: #00000014;
+                            }
+                        }
+                    }
+                    
+                    >a {
+                        // list links
+                        text-decoration: none;
+                        color: black;
+                    }
+                }
+                
+            }
+
+        }
+        // navbar finish
+
+        >section {
+            width: 100%;
+
+            >.row {
+                // courses division container
+                direction: rtl;
+                height: 350px;
+                justify-content: flex-start;
+                margin-top: 50px;
+
+                // discription division
+                >.dec {
+                    width: 30%;
+                    height: 100%;
+                    text-align: right;
+
+                    >* {
+                        margin: 10px 5px;
+                    }
+
+                    > h2{
+                        // title of the description
+                        font-size: 2rem
+                    }
+                    >p {
+                        // text of the description
+                        font-size: 1.4rem;
+                        opacity: .5;
+                    }
+
+                    >a {
+                        // botton of the description
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: snow;
+                        background-color: $themecolor;
+                        width: 150px;
+                        height: 40px;
+                        text-align: center;
+                        border-radius: 5px;
+                        transition: .4s;
+                        margin-top: 25px;
+
+                        &:hover {
+                            background-color: transparent;
+                            color: $themecolor;
+                            border: 1px solid $themecolor;
+                        }
+                    }
+                }
+
+                // courses div
+                >.courses {
+                    width: 70%;
+                    display: flex;
+                    // flex-wrap: wrap;
+
+                    >div {
+                        // programming languages divisions
+                        width: 380px;
+                        height: 90%;
+                        border-radius: 5px;
+                        margin-left: 20px;
+                        
+                        // top part of programming languages division
+                        >.row {
+                            display: flex;
+                            height: 20%;
+                            margin-top: 20px;
+                            align-items: center;
+                            padding: 0 10px;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+
+                            >figure {
+                                // languages logo figure
+                                width: 60px;
+                                height: 60px;
+                                border-radius: 5px;
+                                background-color: $favcolor2;
+                                >img {
+                                    // languages logo img
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            >span {
+                                // course count
+                                display: flex;
+                                margin-top: 5px;
+                                width: 80px;
+                                height: 30px;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: .8rem;
+                                border-radius: 5px;
+                            }
+                        }
+
+                        // title and description of the corresponding course
+                        >.title {
+                            height: 50%;
+                            width: 100%;
+                            padding: 10px;
+                            border-bottom: 1px solid #002f4919;
+
+                            // the title
+                            >h3 {
+                                font-size: 1.9rem;
+                                margin-bottom: 5px;
+                            }
+
+                            // the paragraph
+                            >p {
+                                color: #002f49b3;
+                                font-weight: 600;
+                            }
+                        }
+
+                        // the go to division
+                        >.goTo {
+                            width: 100%;
+                            height: 20%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            padding: 20px;
+
+                            // go to the course botton
+                            >a {
+                                display: flex;
+                                align-items: center;
+                                font-size: 1.1rem;
+                                color: $themecolor;
+
+                                >* {
+                                    padding: 0 3px;
+                                };
+                            }
+                        }
+                        // programming languages divisions (first one)
+                        &:nth-of-type(1) {
+                            background-color: white;
+                            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.065);
+                        }
+                        // programming languages divisions (second one)
+                        &:nth-of-type(2) {
+                            border: 1px solid #002f4944;
+                        }
+                    }
+                }
+            }
+        }
+        /* section finish */
+    }
+    footer {
+        margin-top: 70px;
+        width: 100%;
+        height: 400px;
+        direction: rtl;
+        
+        >.row {
+            justify-content: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.063);
+            >a {
+                width: 500px;
+                height: 100px;
+                >figure {
+                    width: 100%;
+                    height: 100%;
+                    >svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }   
+        }
+        >.foot {
+            font-family: Vazir;
+            direction: rtl;
+            width: 100%;
+            height: calc(100% - 100px);
+            display: flex;
+
+            >div {
+                width: 33.33%;
+                padding: 15px;
+            }
+
+            >.aboutMe {
+                font-family: Karla;
+
+                >* {
+                    margin: 15px;
+                }
+
+                >p {
+                    word-spacing: 2px;
+                    opacity: .6;
+                }
+            }
+            >.social {
+                >* {
+                    margin: 15px;
+                }
+
+                >h3 {
+                    width: 100%;
+                }
+
+                figure {
+                    justify-content: center;
+                    align-items: flex-end;
+                    height: 100px;
+                    width: 100%;
+                    
+                    a {
+                        display: block;
+                        width: 70px;
+
+                        &:nth-of-type(2) {
+                            border-inline: 2px solid rgba(0, 0, 0, 0.159);
+                        }
+                        
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .contactMe {
+                >* {
+                    margin: 15px;
+                }
+
+                >ul {
+                    opacity: .5;
+                    height: 100%;
+
+                    li {
+                        display: flex;
+                        margin: 10px 0;
+                        padding: 10px 5px;
+                        justify-content: space-between;
+                        transition: .4s;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        
+                        &:hover {
+                            background-color: #0000001b;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // footer finishes here
+}
+
+
